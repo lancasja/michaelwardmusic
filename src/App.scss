@@ -29,7 +29,7 @@ img {
 // NavBar
 .nav-bar {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 10px 0 10px;
 
   ul {
     list-style: none;
@@ -45,7 +45,7 @@ img {
     a {
       color: #fff;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 1.125rem;
       text-transform: uppercase;
       display: block;
       margin: 10px 0;
@@ -92,7 +92,7 @@ img {
 
     .subtitle {
       color: #fff;
-      font-size: 39px;
+      font-size: 2.4375rem;
     }
   }
 
@@ -151,10 +151,118 @@ img {
 
 // Homepage
 .home-page {
+
+  > div {
+    border: 1px solid #fff;
+    overflow: hidden;
+    display: inline-block;
+  }
   img {
     transition: transform 10s ease-in-out;
   }
   img:hover {
     transform: scale(1.5);
+  }
+}
+
+// News page
+.upcoming-events {
+  display: flex;
+
+  .nav-dates {
+    width: 106px;
+    min-width: 106px;
+    max-width: 106px;
+    flex-grow: 0;
+    border-right: 1px solid white;
+    margin-right: 5px;
+
+    .date-selector {
+      color: white;
+      font-family: source-sans-pro, sans-serif;
+      border: 1px solid white;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 10px;
+      cursor: pointer;
+
+      div:first-child {
+        font-size: 1.125rem;
+      }
+
+      div:last-child {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+      }
+
+      &.selected {
+        background-color: #7D1A0A; 
+      
+        &::after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          height: 1px;
+          width: 150%;
+          background-color: white;
+          left: 42px;
+        }
+      }
+    }
+  }
+
+  .content {
+    flex-grow: 1;
+    color: white;
+    padding: 0 1rem;
+  }
+}
+
+.upcoming-events--event {
+  display: flex;
+  font-family: sans-serif;
+  font-weight: 300;
+  
+  a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-top: 1rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .event-info {
+    margin-right: 2rem;
+
+    .event-title {
+      margin: 0 0 1rem 0;
+      font-size: 2.25rem;
+    }
+
+    .event-location span {
+      display: block;
+    }
+
+    .note-title {
+      text-decoration: underline;
+      margin: 2rem 0 1rem;
+    }
+  }
+
+  @media (max-width: 920px) {
+    flex-wrap: wrap;
+
+    img {
+      max-width: 75%;
+    }
   }
 }

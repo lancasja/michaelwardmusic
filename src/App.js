@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Header from './components/Header';
 import HomePage from './components/HomePage';
-
+import NewsPage from './components/NewsPage';
 import './App.css';
 
 import logo from './assets/michael-ward-logo.svg';
@@ -14,7 +14,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           {/* Left - Rail */}
-          <div> 
+          <div>
             <NavBar items={[
               {
                 label: 'Home',
@@ -44,10 +44,14 @@ class App extends Component {
           </div>
           
           {/* Right - Content */}
-          <div style={{ padding: '0 10px 0 0px' }}>
+          <div style={{
+            padding: '0 10px 0 0px',
+            width: '100%'
+          }}>
             <Header logo={ logo } subtitle="with Dogs and Fishes"/>
 
-            <Route path="/" component={ HomePage }/>
+            <Route exact path="/" component={ HomePage }/>
+            <Route exact path="/news" component={ NewsPage }/>
           </div>
 
         </div>
