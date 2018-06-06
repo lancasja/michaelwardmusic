@@ -1,0 +1,306 @@
+#u18881
+{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #FFFFFF;
+	background-color: transparent;
+	border-radius: 100px;
+	position: relative;
+}
+
+#u18881:hover
+{
+	background-color: #7F7F7F;
+}
+
+#u18881.MuseLinkActive
+{
+	background-color: #7D1A0A;
+}
+
+#u18882-4
+{
+	background-color: transparent;
+	line-height: 22px;
+	color: #FFFFFF;
+	font-size: 18px;
+	text-align: center;
+	font-family: mate-sc, serif;
+	font-weight: 400;
+	position: relative;
+}
+
+#u18982
+{
+	background-color: #191919;
+	position: relative;
+}
+
+#u18981-4
+{
+	background-color: transparent;
+	line-height: 47px;
+	color: #FFFFFF;
+	font-size: 39px;
+	text-align: left;
+	font-family: mate-sc, serif;
+	font-weight: 400;
+	position: relative;
+}
+
+.PamphletWidget .ThumbGroup .Thumb,.PamphletNextButton,.PamphletPrevButton,.PamphletCloseButton /* pamphlet2 */
+{
+	cursor: pointer;
+}
+
+#u18939-4
+{
+	background-color: transparent;
+	line-height: 22px;
+	color: #FFFFFF;
+	font-size: 18px;
+	text-align: left;
+	font-family: mate-sc, serif;
+	font-weight: 400;
+	position: relative;
+}
+
+#u18923-4
+{
+	background-color: transparent;
+	line-height: 22px;
+	color: #FFFFFF;
+	font-size: 18px;
+	letter-spacing: 0px;
+	text-align: left;
+	font-family: source-sans-pro, sans-serif;
+	font-weight: 300;
+	position: relative;
+}
+
+#u18923
+{
+	font-family: mate-sc, serif;
+	font-weight: 400;
+}
+
+#u18911-4
+{
+	background-color: transparent;
+	line-height: 22px;
+	color: #FFFFFF;
+	font-size: 18px;
+	letter-spacing: 0px;
+	text-align: left;
+	font-family: mate-sc, serif;
+	font-weight: 400;
+	position: relative;
+}
+
+#u18963-4
+{
+	background-color: transparent;
+	line-height: 22px;
+	color: #FFFFFF;
+	font-size: 18px;
+	letter-spacing: 0px;
+	text-align: left;
+	font-family: mate-sc, serif;
+	font-weight: 400;
+	position: relative;
+}
+
+#u18898,#u18934,#u18953,#u18927,#u18915,#u18970,#u18960,#u18889
+{
+	position: absolute;
+}
+
+#u18902,#u18938,#u18946,#u18922,#u18910,#u18976,#u18962,#u18886
+{
+	border-style: none;
+	border-color: #999999;
+	background-color: transparent;
+	position: relative;
+}
+
+#u18903,#u18947,#u18977,#u18887
+{
+	border-style: solid;
+	border-color: #FFFFFF;
+	background-color: transparent;
+	position: relative;
+	border-width: 1px 0px 0px;
+}
+
+#u18901,#u18937,#u18945,#u18921,#u18909,#u18975,#u18961,#u18885,#u18489
+{
+	position: absolute;
+	background-color: transparent;
+}
+
+#u18490
+{
+	border-style: none;
+	border-color: transparent;
+	background-color: #191919;
+	position: relative;
+}
+
+#u18493_states
+{
+	vertical-align: top;
+	background: url("../../images/u18493_states.png") no-repeat 0px 0px;
+}
+
+#u18493:hover #u18493_states
+{
+	background: url("../../images/u18493_states-r.png") no-repeat 0px 0px;
+}
+
+.hidpi #u18493:hover #u18493_states
+{
+	background-image: url("../../images/u18493_states_2x.png");
+	background-image: url("../../images/u18493_states-r_2x.png");
+	background-size: 40px 40px;
+}
+
+#u18880,#u18980,#u18883,#u18492,#u18495
+{
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	position: relative;
+}
+
+#u18494-5,#u18496-5
+{
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	color: #FFFFFF;
+	text-align: left;
+	font-family: source-sans-pro, sans-serif;
+	font-weight: 400;
+	position: relative;
+}
+
+#u18494,#u18496
+{
+	font-family: source-sans-pro, sans-serif;
+	font-weight: 700;
+}
+
+#u18494-2,#u18496-2
+{
+	font-family: source-sans-pro, sans-serif;
+	font-weight: 300;
+}
+
+#u18497_states
+{
+	vertical-align: top;
+	background: url("../../images/u18497_states.png") no-repeat 0px 0px;
+}
+
+#u18497:hover #u18497_states
+{
+	background: url("../../images/u18497_states-r.png") no-repeat 0px 0px;
+}
+
+.hidpi #u18497:hover #u18497_states
+{
+	background-image: url("../../images/u18497_states_2x.png");
+	background-image: url("../../images/u18497_states-r_2x.png");
+	background-size: 40px 40px;
+}
+
+#u18491-5
+{
+	background-color: transparent;
+	color: #FFFFFF;
+	text-align: left;
+	font-family: source-sans-pro, sans-serif;
+	font-weight: 400;
+	position: relative;
+}
+
+#u18491
+{
+	font-family: source-sans-pro, sans-serif;
+	font-weight: 900;
+}
+
+#pamphletu18896,#u18897,#pamphletu18932,#u18933,#pamphletu18944,#u18952,#pamphletu18920,#u18926,#pamphletu18908,#u18914,#pamphletu18968,#u18969,#pamphletu18956,#u18959,#pamphletu18884,#u18888,#pamphletu18488,#u18493,#u18497,#u18500
+{
+	position: relative;
+}
+
+#u18501
+{
+	position: absolute;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #FFFFFF;
+	background-color: transparent;
+	border-radius: 100px;
+}
+
+#u18939-4:hover,#u18923-4:hover,#u18911-4:hover,#u18963-4:hover,#u18501:hover
+{
+	background-color: #7F7F7F;
+}
+
+#u18501.PamphletThumbSelected
+{
+	background-color: transparent;
+}
+
+#u18502-4
+{
+	background-color: transparent;
+	line-height: 29px;
+	color: #FFFFFF;
+	font-size: 24px;
+	text-align: center;
+	font-family: source-sans-pro, sans-serif;
+	font-weight: 300;
+	position: relative;
+}
+
+#u18501.PamphletThumbSelected #u18502-4 p
+{
+	padding-top: 0px;
+	letter-spacing: 0px;
+	font-size: 24px;
+}
+
+#u18505
+{
+	position: absolute;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #FFFFFF;
+	background-color: #191919;
+	border-radius: 100px;
+}
+
+#u18505:hover
+{
+	background-color: #999999;
+}
+
+#u18505:active
+{
+	background-color: #6B6B6B;
+}
+
+#u18506-4
+{
+	background-color: transparent;
+	line-height: 34px;
+	color: #FFFFFF;
+	font-size: 24px;
+	text-align: center;
+	position: relative;
+}
+

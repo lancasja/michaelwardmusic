@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html class="html" lang="en-US">
+<head>
+
+    <script type="text/javascript">
+        if (typeof Muse == "undefined") window.Muse = {};
+        window.Muse.assets = {
+            "required": ["jquery-1.8.3.min.js", "museutils.js", "jquery.watch.js", "webpro.js", "musewpslideshow.js", "jquery.museoverlay.js", "touchswipe.js", "museredirect.js", "music.css"],
+            "outOfDate": []
+        };
+    </script>
+
+    <script src="scripts/museredirect.js?3899419633" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        Muse.Redirect.redirect('desktop', 'tablet/music.html', 'phone/music.html');
+    </script>
+
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <meta name="generator" content="2015.0.2.310"/>
+    <title>MUSIC</title>
+    <link media="only screen and (max-device-width: 370px)" rel="alternate"
+          href="http://michaelwardmusic.com/phone/music.html"/>
+    <link media="only screen and (max-device-width: 960px)" rel="alternate"
+          href="http://michaelwardmusic.com/tablet/music.html"/>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/site_global.css?3972839604"/>
+    <link rel="stylesheet" type="text/css" href="css/master_music-only.css?4164670283"/>
+    <link rel="stylesheet" type="text/css" href="css/music.css?462644445" id="pagesheet"/>
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" type="text/css" href="css/iefonts_music.css?3867085184"/>
+    <![endif]-->
+    <!-- Other scripts -->
+    <script type="text/javascript">
+        document.documentElement.className += ' js';
+        var __adobewebfontsappname__ = "muse";
+    </script>
+    <!-- JS includes -->
+    <script type="text/javascript">
+        document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/source-sans-pro:n3,n7,n9,n4:all;mate-sc:n4:all.js" type="text/javascript">\x3C/script>');
+    </script>
+    <!--HTML Widget code-->
+
+    <style>
+
+        .audioplayer {
+            height: 2.5em; /* 40 */
+            position: relative;
+            z-index: 1;
+        }
+
+        .audioplayer-mini {
+            width: 2.5em; /* 40 */
+            margin: 0 auto;
+        }
+
+        .audioplayer > div {
+            position: absolute;
+        }
+
+        .audioplayer {
+            color: #FFFFFF;
+            background: #191919;
+        }
+
+        .audioplayer-playpause {
+            width: 2.5em; /* 40 */
+            height: 100%;
+            text-align: left;
+            text-indent: -9999px;
+            cursor: pointer;
+            z-index: 2;
+            top: 0;
+            left: 0;
+        }
+
+        .audioplayer-mini .audioplayer-playpause {
+            width: 100%;
+        }
+
+        /* Color */
+        .audioplayer-playpause:hover,
+        .audioplayer-playpause:focus {
+            background-color: 000000;
+        }
+
+        .audioplayer-playpause a {
+            display: block;
+        }
+
+        .audioplayer:not(.audioplayer-playing) .audioplayer-playpause a {
+            width: 0;
+            height: 0;
+            border: 0.5em solid transparent; /* 8 */
+            border-right: none;
+            border-left-color: #FFFFFF;
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -0.5em 0 0 -0.25em; /* 8 4 */
+        }
+
+        .audioplayer-playing .audioplayer-playpause a {
+            width: 0.75em; /* 12 */
+            height: 0.75em; /* 12 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -0.375em 0 0 -0.375em; /* 6 */
+        }
+
+        .audioplayer-playing .audioplayer-playpause a:before,
+        .audioplayer-playing .audioplayer-playpause a:after {
+            width: 40%;
+            height: 100%;
+            background-color: #FFFFFF;
+            content: '';
+            position: absolute;
+            top: 0;
+        }
+
+        .audioplayer-playing .audioplayer-playpause a:before {
+            left: 0;
+        }
+
+        .audioplayer-playing .audioplayer-playpause a:after {
+            right: 0;
+        }
+
+        .audioplayer-time {
+            width: 4.375em; /* 70 */
+            height: 100%;
+            line-height: 2.5em; /* 40 */
+            text-align: center;
+            z-index: 2;
+            top: 0;
+        }
+
+        .audioplayer-time-current {
+            border-left: 1px solid #FFFFFF;
+            left: 2.5em; /* 40 */
+        }
+
+        .audioplayer-time-duration {
+            right: 2.5em; /* 40 */
+        }
+
+        .audioplayer-novolume .audioplayer-time-duration {
+            border-right: 0;
+            right: 0;
+        }
+
+        .audioplayer-bar {
+            height: 0.875em; /* 14 */
+            background-color: #000000;
+            cursor: pointer;
+            z-index: 1;
+            top: 50%;
+            right: 6.875em; /* 110 */
+            left: 6.875em; /* 110 */
+            margin-top: -0.438em; /* 7 */
+        }
+
+        .audioplayer-novolume .audioplayer-bar {
+            right: 4.375em; /* 70 */
+        }
+
+        .audioplayer-bar div {
+            width: 0;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .audioplayer-bar-loaded {
+            background-color: #FFFFFF;
+            z-index: 1;
+        }
+
+        .audioplayer-bar-played {
+            /* Accent Color */
+            background: #7D1A0A;
+            z-index: 2;
+        }
+
+        .audioplayer-volume {
+            width: 2.5em; /* 40 */
+            height: 100%;
+            border-left: 1px solid #FFFFFF;
+            text-align: left;
+            text-indent: -9999px;
+            cursor: pointer;
+            z-index: 2;
+            top: 0;
+            right: 0;
+        }
+
+        .audioplayer-volume:hover,
+        .audioplayer-volume:focus {
+            background-color: #000000;
+
+        }
+
+        .audioplayer-volume-button {
+            width: 100%;
+            height: 100%;
+        }
+
+        .audioplayer-volume-button a {
+            width: 0.313em; /* 5 */
+            height: 0.375em; /* 6 */
+            background-color: #FFFFFF;
+            display: block;
+            position: relative;
+            z-index: 1;
+            top: 40%;
+            left: 35%;
+        }
+
+        .audioplayer-volume-button a:before,
+        .audioplayer-volume-button a:after {
+            content: '';
+            position: absolute;
+        }
+
+        .audioplayer-volume-button a:before {
+            width: 0;
+            height: 0;
+            border: 0.5em solid transparent; /* 8 */
+            border-left: none;
+            border-right-color: #FFFFFF;
+            z-index: 2;
+            top: 50%;
+            right: -0.25em;
+            margin-top: -0.5em; /* 8 */
+        }
+
+        /* Color */
+        .audioplayer:not(.audioplayer-mute) .audioplayer-volume-button a:after {
+            /* "volume" icon by Nicolas Gallagher, http://nicolasgallagher.com/pure-css-gui-icons */
+            width: 0.313em; /* 5 */
+            height: 0.313em; /* 5 */
+            border: 0.25em double #FFFFFF; /* 4 */
+            border-width: 0.25em 0.25em 0 0; /* 4 */
+            left: 0.563em; /* 9 */
+            top: -0.063em; /* 1 */
+            -webkit-border-radius: 0 0.938em 0 0; /* 15 */
+            -moz-border-radius: 0 0.938em 0 0; /* 15 */
+            border-radius: 0 0.938em 0 0; /* 15 */
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .audioplayer-volume-adjust {
+            width: 100%;
+            height: 6.25em; /* 100 */
+            cursor: default;
+            position: absolute;
+            left: 0;
+            top: -9999px;
+            background: #000000;
+
+        }
+
+        .audioplayer-volume:not(:hover) .audioplayer-volume-adjust {
+            opacity: 0;
+        }
+
+        .audioplayer-volume:hover .audioplayer-volume-adjust {
+            top: auto;
+            bottom: 100%;
+        }
+
+        .audioplayer-volume-adjust > div {
+            width: 40%;
+            height: 80%;
+            background-color: #FFFFFF;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            margin: 30% auto 0;
+        }
+
+        .audioplayer-volume-adjust div div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            /* Accent Color */
+            background: #7D1A0A;
+        }
+
+        .audioplayer-novolume .audioplayer-volume {
+            display: none;
+        }
+    </style>
+
+    <style>
+
+        .audioplayer {
+            height: 2.5em; /* 40 */
+            position: relative;
+            z-index: 1;
+        }
+
+        .audioplayer-mini {
+            width: 2.5em; /* 40 */
+            margin: 0 auto;
+        }
+
+        .audioplayer > div {
+            position: absolute;
+        }
+
+        .audioplayer {
+            color: #FFFFFF;
+            background: #191919;
+        }
+
+        .audioplayer-playpause {
+            width: 2.5em; /* 40 */
+            height: 100%;
+            text-align: left;
+            text-indent: -9999px;
+            cursor: pointer;
+            z-index: 2;
+            top: 0;
+            left: 0;
+        }
+
+        .audioplayer-mini .audioplayer-playpause {
+            width: 100%;
+        }
+
+        /* Color */
+        .audioplayer-playpause:hover,
+        .audioplayer-playpause:focus {
+            background-color: 191919;
+        }
+
+        .audioplayer-playpause a {
+            display: block;
+        }
+
+        .audioplayer:not(.audioplayer-playing) .audioplayer-playpause a {
+            width: 0;
+            height: 0;
+            border: 0.5em solid transparent; /* 8 */
+            border-right: none;
+            border-left-color: #FFFFFF;
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -0.5em 0 0 -0.25em; /* 8 4 */
+        }
+
+        .audioplayer-playing .audioplayer-playpause a {
+            width: 0.75em; /* 12 */
+            height: 0.75em; /* 12 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -0.375em 0 0 -0.375em; /* 6 */
+        }
+
+        .audioplayer-playing .audioplayer-playpause a:before,
+        .audioplayer-playing .audioplayer-playpause a:after {
+            width: 40%;
+            height: 100%;
+            background-color: #FFFFFF;
+            content: '';
+            position: absolute;
+            top: 0;
+        }
+
+        .audioplayer-playing .audioplayer-playpause a:before {
+            left: 0;
+        }
+
+        .audioplayer-playing .audioplayer-playpause a:after {
+            right: 0;
+        }
+
+        .audioplayer-time {
+            width: 4.375em; /* 70 */
+            height: 100%;
+            line-height: 2.5em; /* 40 */
+            text-align: center;
+            z-index: 2;
+            top: 0;
+        }
+
+        .audioplayer-time-current {
+            border-left: 1px solid #FFFFFF;
+            left: 2.5em; /* 40 */
+        }
+
+        .audioplayer-time-duration {
+            right: 2.5em; /* 40 */
+        }
+
+        .audioplayer-novolume .audioplayer-time-duration {
+            border-right: 0;
+            right: 0;
+        }
+
+        .audioplayer-bar {
+            height: 0.875em; /* 14 */
+            background-color: #191919;
+            cursor: pointer;
+            z-index: 1;
+            top: 50%;
+            right: 6.875em; /* 110 */
+            left: 6.875em; /* 110 */
+            margin-top: -0.438em; /* 7 */
+        }
+
+        .audioplayer-novolume .audioplayer-bar {
+            right: 4.375em; /* 70 */
+        }
+
+        .audioplayer-bar div {
+            width: 0;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .audioplayer-bar-loaded {
+            background-color: #FFFFFF;
+            z-index: 1;
+        }
+
+        .audioplayer-bar-played {
+            /* Accent Color */
+            background: #7D1A0A;
+            z-index: 2;
+        }
+
+        .audioplayer-volume {
+            width: 2.5em; /* 40 */
+            height: 100%;
+            border-left: 1px solid #FFFFFF;
+            text-align: left;
+            text-indent: -9999px;
+            cursor: pointer;
+            z-index: 2;
+            top: 0;
+            right: 0;
+        }
+
+        .audioplayer-volume:hover,
+        .audioplayer-volume:focus {
+            background-color: #191919;
+
+        }
+
+        .audioplayer-volume-button {
+            width: 100%;
+            height: 100%;
+        }
+
+        .audioplayer-volume-button a {
+            width: 0.313em; /* 5 */
+            height: 0.375em; /* 6 */
+            background-color: #FFFFFF;
+            display: block;
+            position: relative;
+            z-index: 1;
+            top: 40%;
+            left: 35%;
+        }
+
+        .audioplayer-volume-button a:before,
+        .audioplayer-volume-button a:after {
+            content: '';
+            position: absolute;
+        }
+
+        .audioplayer-volume-button a:before {
+            width: 0;
+            height: 0;
+            border: 0.5em solid transparent; /* 8 */
+            border-left: none;
+            border-right-color: #FFFFFF;
+            z-index: 2;
+            top: 50%;
+            right: -0.25em;
+            margin-top: -0.5em; /* 8 */
+        }
+
+        /* Color */
+        .audioplayer:not(.audioplayer-mute) .audioplayer-volume-button a:after {
+            /* "volume" icon by Nicolas Gallagher, http://nicolasgallagher.com/pure-css-gui-icons */
+            width: 0.313em; /* 5 */
+            height: 0.313em; /* 5 */
+            border: 0.25em double #FFFFFF; /* 4 */
+            border-width: 0.25em 0.25em 0 0; /* 4 */
+            left: 0.563em; /* 9 */
+            top: -0.063em; /* 1 */
+            -webkit-border-radius: 0 0.938em 0 0; /* 15 */
+            -moz-border-radius: 0 0.938em 0 0; /* 15 */
+            border-radius: 0 0.938em 0 0; /* 15 */
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .audioplayer-volume-adjust {
+            width: 100%;
+            height: 6.25em; /* 100 */
+            cursor: default;
+            position: absolute;
+            left: 0;
+            top: -9999px;
+            background: #191919;
+
+        }
+
+        .audioplayer-volume:not(:hover) .audioplayer-volume-adjust {
+            opacity: 0;
+        }
+
+        .audioplayer-volume:hover .audioplayer-volume-adjust {
+            top: auto;
+            bottom: 100%;
+        }
+
+        .audioplayer-volume-adjust > div {
+            width: 40%;
+            height: 80%;
+            background-color: #FFFFFF;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            margin: 30% auto 0;
+        }
+
+        .audioplayer-volume-adjust div div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            /* Accent Color */
+            background: #7D1A0A;
+        }
+
+        .audioplayer-novolume .audioplayer-volume {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="clearfix" id="page"><!-- column -->
+    <div class="position_content" id="page_position_content">
+        <div class="clearfix pinned-colelem" id="u20640"><!-- group -->
+            <div class="pointer_cursor rounded-corners clearfix" id="u20641"><!-- group -->
+                <a class="block" href="index.html" data-href="page:U73"></a>
+                <a class="nonblock nontext clearfix" id="u20642-4" href="index.html" data-href="page:U73">
+                    <!-- content --><p>HOME</p></a>
+            </div>
+        </div>
+        <div class="clearfix pinned-colelem" id="u20214"><!-- group -->
+            <img class="svg" id="u20215" src="images/mw%20website%20logo.svg" width="463" height="98" alt=""
+                 data-mu-svgfallback="images/mw%20website%20logo_poster_.png"/><!-- svg -->
+            <div class="clearfix" id="u20217-4"><!-- content -->
+                <p>With Dogs and Fishes</p>
+            </div>
+        </div>
+
+        <div class="clearfix colelem" id="u20219"><!-- group -->
+            <div class="clearfix grpelem" id="u20228"><!-- group -->
+                <div class="rounded-corners clearfix" id="u20231"><!-- group -->
+                    <a class="nonblock nontext rounded-corners" id="u20229"
+                       href="https://www.facebook.com/pages/Michael-Ward-with-Dogs-and-Fishes/229035883790207?fref=ts"
+                       target="_blank"><!-- svg --><img class="svg" src="images/facebook.svg" width="16" height="30"
+                                                        alt="" data-mu-svgfallback="images/facebook_poster_.png"/></a>
+                </div>
+            </div>
+            <div class="clearfix grpelem" id="u20220"><!-- group -->
+                <div class="pointer_cursor rounded-corners clearfix" id="u20223"><!-- group -->
+                    <a class="block" href="https://soundcloud.com/michaelwardmusic"></a>
+                    <a class="nonblock nontext rounded-corners" id="u20221"
+                       href="https://soundcloud.com/michaelwardmusic" target="_blank"><!-- svg -->
+                        <img class="svg" src="images/soundcloud.svg" width="40" height="23" alt="" data-mu-svgfallback="images/soundcloud_poster_.png"/>
+                    </a>
+                </div>
+            </div>
+            <div class="clearfix grpelem" id="u20224"><!-- group -->
+                <div class="rounded-corners clearfix" id="u20225"><!-- group -->
+                    <a class="nonblock nontext rounded-corners" id="u20226"
+                       href="https://www.youtube.com/user/dogsandfishes/feed" target="_blank"><!-- svg --><img
+                            class="svg" src="images/youtube.svg" width="30" height="23" alt=""
+                            data-mu-svgfallback="images/youtube_poster_.png"/></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix colelem" id="u19542"><!-- column -->
+            <div class="announcement-banner">
+                <p>Downloads now available on iTunes, Spotify, Tidal and more!</p>
+            </div>
+            <div class="position_content" id="u19542_position_content">
+                <div class="clearfix colelem" id="u20949"><!-- column -->
+                    <!-- m_editable region-id="editable-static-tag-U20927" template="music.html" data-type="image" -->
+                    <div class="clip_frame clearfix colelem" id="u20927" data-muse-uid="U20927"
+                         data-muse-type="img_frame"><!-- image -->
+                        <div id="u20927_clip">
+                            <img class="position_content" id="u20927_img" src="images/photo_2015-07-29_11-51-21.jpg"
+                                 alt="" width="1111" height="478" data-muse-src="images/photo_2015-07-29_11-51-21.jpg"/>
+                        </div>
+                    </div>
+                    <!-- /m_editable -->
+                    <div class="clearfix colelem" id="u20934"><!-- column -->
+                        <!-- m_editable region-id="editable-static-tag-U19936" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                        <div class="clearfix colelem" id="u19936-4" data-muse-uid="U19936" data-muse-type="txt_frame">
+                            <!-- content -->
+                            <p>[ Weekends on the Wine Dark Sea ]</p>
+                        </div>
+                        <!-- /m_editable -->
+                        <!-- m_editable region-id="editable-static-tag-U19935" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                        <div class="clearfix colelem" id="u19935-4" data-muse-uid="U19935" data-muse-type="txt_frame">
+                            <!-- content -->
+                            <p>| 2013 | Album | Produced by Michael Ward</p>
+                        </div>
+                        <!-- /m_editable -->
+                    </div>
+                    <div class="clearfix colelem" id="u19898"><!-- group -->
+                        <div class="clearfix grpelem" id="u19911"><!-- column -->
+                            <div class="colelem" id="u19924"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="http://dg7mo79fc5sh8.cloudfront.net/01-your-language.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19920"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/02-one-bright-night.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19926"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/
+             03-don-t-talk-about.mp3"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19912"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/04-working-for-the-one-percent.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19916"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/05-engine-eddie.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19928"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/06-taking-my-time.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19918"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/07-the-pearl.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19922"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/08-bad-boy-rules.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19914"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/09-my-neighborhood.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19930"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/10-new-car-smell.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19932"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/11-chicken-blood-and-gin.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="clearfix grpelem" id="u19899"><!-- column -->
+                            <!-- m_editable region-id="editable-static-tag-U19907" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19907-4" data-muse-uid="U19907"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19907-2">01 | Your Language</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19902" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19902-4" data-muse-uid="U19902"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19902-2">02 | One Bright Night</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19906" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19906-4" data-muse-uid="U19906"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19906-2">03 | Don't Talk About</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19905" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19905-4" data-muse-uid="U19905"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19905-2">04 | Working For The One Percent</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19903" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19903-4" data-muse-uid="U19903"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19903-2">05 | Engine Eddie</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19904" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19904-4" data-muse-uid="U19904"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19904-2">06 | Taking My Time</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19909" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19909-4" data-muse-uid="U19909"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19909-2">07 | The Pearl Gone By</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19908" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19908-4" data-muse-uid="U19908"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19908-2">08 | Bad Boys Rules</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19901" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19901-4" data-muse-uid="U19901"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19901-2">09 | My Neighbourhood</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19910" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19910-4" data-muse-uid="U19910"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19910-2">10 | New Car Smell</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19900" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19900-4" data-muse-uid="U19900"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19900-2">11 | Chicken Blood and Gin</p>
+                            </div>
+                            <!-- /m_editable -->
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix colelem" id="u20948"><!-- column -->
+                    <!-- m_editable region-id="editable-static-tag-U20935" template="music.html" data-type="image" -->
+                    <div class="clip_frame clearfix colelem" id="u20935" data-muse-uid="U20935"
+                         data-muse-type="img_frame"><!-- image -->
+                        <div id="u20935_clip">
+                            <img class="position_content" id="u20935_img" src="images/photo_2015-07-29_11-51-31.jpg"
+                                 alt="" width="1112" height="487" data-muse-src="images/photo_2015-07-29_11-51-31.jpg"/>
+                        </div>
+                    </div>
+                    <!-- /m_editable -->
+                    <div class="clearfix colelem" id="u20056"><!-- column -->
+                        <!-- m_editable region-id="editable-static-tag-U20057" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                        <div class="clearfix colelem" id="u20057-4" data-muse-uid="U20057" data-muse-type="txt_frame">
+                            <!-- content -->
+                            <p>[ Working For The One Percent ]</p>
+                        </div>
+                        <!-- /m_editable -->
+                        <!-- m_editable region-id="editable-static-tag-U20058" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                        <div class="clearfix colelem" id="u20058-4" data-muse-uid="U20058" data-muse-type="txt_frame">
+                            <!-- content -->
+                            <p>| 2012 | Single | Produced by Michael Ward</p>
+                        </div>
+                        <!-- /m_editable -->
+                    </div>
+                    <div class="clearfix colelem" id="u20060"><!-- group -->
+                        <div class="grpelem" id="u20062"><!-- custom html -->
+
+                            <div id="wrapper">
+                                <audio preload="none" controls>
+                                    <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/working-for-the-one-percent.mp3">
+                                    <!-- Hide -->
+                                    <!--<source src="Add File"><!-- Hide -->
+                                    <!--<source src="Add File"><!-- Hide -->
+                                </audio>
+
+                            </div>
+
+                        </div>
+                        <!-- m_editable region-id="editable-static-tag-U20061" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                        <div class="clearfix grpelem" id="u20061-4" data-muse-uid="U20061" data-muse-type="txt_frame">
+                            <!-- content -->
+                            <p id="u20061-2">01 | Working For The One Percent</p>
+                        </div>
+                        <!-- /m_editable -->
+                    </div>
+                </div>
+                <div class="clearfix colelem" id="u20947"><!-- column -->
+                    <!-- m_editable region-id="editable-static-tag-U20941" template="music.html" data-type="image" -->
+                    <div class="clip_frame clearfix colelem" id="u20941" data-muse-uid="U20941"
+                         data-muse-type="img_frame"><!-- image -->
+                        <div id="u20941_clip">
+                            <img class="position_content" id="u20941_img" src="images/photo_2015-07-29_11-51-38.jpg"
+                                 alt="" width="1113" height="481" data-muse-src="images/photo_2015-07-29_11-51-38.jpg"/>
+                        </div>
+                    </div>
+                    <!-- /m_editable -->
+                    <div class="clearfix colelem" id="u19850"><!-- column -->
+                        <!-- m_editable region-id="editable-static-tag-U19851" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                        <div class="clearfix colelem" id="u19851-4" data-muse-uid="U19851" data-muse-type="txt_frame">
+                            <!-- content -->
+                            <p>[ A Walk In The Park ]</p>
+                        </div>
+                        <!-- /m_editable -->
+                        <!-- m_editable region-id="editable-static-tag-U19852" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                        <div class="clearfix colelem" id="u19852-4" data-muse-uid="U19852" data-muse-type="txt_frame">
+                            <!-- content -->
+                            <p>| Album | 2008 | Produced by Michael Ward</p>
+                        </div>
+                        <!-- /m_editable -->
+                    </div>
+                    <div class="clearfix colelem" id="u19853"><!-- group -->
+                        <div class="clearfix grpelem" id="u19854"><!-- column -->
+                            <div class="colelem" id="u19871"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/01_a-walk-in-the-park.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19857"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/02_worth-the-wait.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19859"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/03_dress-up-day.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19863"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/04_smackdown.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19873"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/05_roman-holyday.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19877"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/06_buy-something.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19879"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/07_that-s-not-news.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19865"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/08_snakebite.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19855"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/09_something-you-can-use.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19867"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/10_nothing-disappears.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19875"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/11_ma-mae.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19861"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/12_god-through-a-crack.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                            <div class="colelem" id="u19869"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/13_the-ever-present-destination.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="clearfix grpelem" id="u19881"><!-- column -->
+                            <!-- m_editable region-id="editable-static-tag-U19882" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19882-4" data-muse-uid="U19882"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19882-2">01 | A Walk In The Park</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19894" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19894-4" data-muse-uid="U19894"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19894-2">02 | Worth The Wait</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19890" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19890-4" data-muse-uid="U19890"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19890-2">03 | Dress Up Day</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19886" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19886-4" data-muse-uid="U19886"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19886-2">04 | Smackdown</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19888" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19888-4" data-muse-uid="U19888"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19888-2">05 | Roman Holyday</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19892" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19892-4" data-muse-uid="U19892"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19892-2">06 | Buy Something</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19885" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19885-4" data-muse-uid="U19885"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19885-2">07 | That's Not News</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19883" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19883-4" data-muse-uid="U19883"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19883-2">08 | Snakebite</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19884" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19884-4" data-muse-uid="U19884"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19884-2">09 | Something You Can Use</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19889" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19889-4" data-muse-uid="U19889"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19889-2">10 | Nothing Disappears</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19891" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19891-4" data-muse-uid="U19891"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19891-2">11 | Ma Mae</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19893" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19893-4" data-muse-uid="U19893"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19893-2">12 | God Through A Crack</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U19887" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u19887-4" data-muse-uid="U19887"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p id="u19887-2">13 | The Ever Present Destination</p>
+                            </div>
+                            <!-- /m_editable -->
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix colelem" id="u20957"><!-- column -->
+                    <!-- m_editable region-id="editable-static-tag-U20951" template="music.html" data-type="image" -->
+                    <div class="clip_frame clearfix colelem" id="u20951" data-muse-uid="U20951"
+                         data-muse-type="img_frame"><!-- image -->
+                        <div id="u20951_clip">
+                            <img class="position_content" id="u20951_img" src="images/photo_2015-07-29_11-51-56.jpg"
+                                 alt="" width="1113" height="549" data-muse-src="images/photo_2015-07-29_11-51-56.jpg"/>
+                        </div>
+                    </div>
+                    <!-- /m_editable -->
+                    <div class="clearfix colelem" id="u20950"><!-- column -->
+                        <div class="clearfix colelem" id="u20101"><!-- column -->
+                            <!-- m_editable region-id="editable-static-tag-U20103" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u20103-4" data-muse-uid="U20103"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p>[ Late For The Train ]</p>
+                            </div>
+                            <!-- /m_editable -->
+                            <!-- m_editable region-id="editable-static-tag-U20102" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                            <div class="clearfix colelem" id="u20102-4" data-muse-uid="U20102"
+                                 data-muse-type="txt_frame"><!-- content -->
+                                <p>| Album | 2000 |</p>
+                            </div>
+                            <!-- /m_editable -->
+                        </div>
+                        <div class="clearfix colelem" id="u20065"><!-- group -->
+                            <div class="clearfix grpelem" id="u20077"><!-- column -->
+                                <div class="colelem" id="u20082"><!-- custom html -->
+
+                                    <div id="wrapper">
+                                        <audio preload="none" controls>
+                                            <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/01_never-too-late.mp3">
+                                            <!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                        </audio>
+
+                                    </div>
+
+                                </div>
+                                <div class="colelem" id="u20078"><!-- custom html -->
+
+                                    <div id="wrapper">
+                                        <audio preload="none" controls>
+                                            <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/02_no-holydays-(in-the-food-chain).mp3">
+                                            <!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                        </audio>
+
+                                    </div>
+
+                                </div>
+                                <div class="colelem" id="u20084"><!-- custom html -->
+
+                                    <div id="wrapper">
+                                        <audio preload="none" controls>
+                                            <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/03_watching-the-pygmies.mp3">
+                                            <!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                        </audio>
+
+                                    </div>
+
+                                </div>
+                                <div class="colelem" id="u20080"><!-- custom html -->
+
+                                    <div id="wrapper">
+                                        <audio preload="none" controls>
+                                            <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/04_my-friend.mp3">
+                                            <!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                        </audio>
+
+                                    </div>
+
+                                </div>
+                                <div class="colelem" id="u20086"><!-- custom html -->
+
+                                    <div id="wrapper">
+                                        <audio preload="none" controls>
+                                            <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/05_a-delicate-hand.mp3">
+                                            <!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                        </audio>
+
+                                    </div>
+
+                                </div>
+                                <div class="colelem" id="u20094"><!-- custom html -->
+
+                                    <div id="wrapper">
+                                        <audio preload="none" controls>
+                                            <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/06_a-thief-in-the-game.mp3">
+                                            <!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                        </audio>
+
+                                    </div>
+
+                                </div>
+                                <div class="colelem" id="u20092"><!-- custom html -->
+
+                                    <div id="wrapper">
+                                        <audio preload="none" controls>
+                                            <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/07_zombie-love.mp3">
+                                            <!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                        </audio>
+
+                                    </div>
+
+                                </div>
+                                <div class="colelem" id="u20096"><!-- custom html -->
+
+                                    <div id="wrapper">
+                                        <audio preload="none" controls>
+                                            <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/08_you-could-be-wrong.mp3">
+                                            <!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                        </audio>
+
+                                    </div>
+
+                                </div>
+                                <div class="colelem" id="u20090"><!-- custom html -->
+
+                                    <div id="wrapper">
+                                        <audio preload="none" controls>
+                                            <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/09_ghosts-of-sailors.mp3">
+                                            <!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                        </audio>
+
+                                    </div>
+
+                                </div>
+                                <div class="colelem" id="u20088"><!-- custom html -->
+
+                                    <div id="wrapper">
+                                        <audio preload="none" controls>
+                                            <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/10_cheap-irony.mp3">
+                                            <!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                            <!--<source src="Add File"><!-- Hide -->
+                                        </audio>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="clearfix grpelem" id="u20066"><!-- column -->
+                                <!-- m_editable region-id="editable-static-tag-U20073" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                                <div class="clearfix colelem" id="u20073-4" data-muse-uid="U20073"
+                                     data-muse-type="txt_frame"><!-- content -->
+                                    <p id="u20073-2">01 | Never Too Late</p>
+                                </div>
+                                <!-- /m_editable -->
+                                <!-- m_editable region-id="editable-static-tag-U20070" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                                <div class="clearfix colelem" id="u20070-4" data-muse-uid="U20070"
+                                     data-muse-type="txt_frame"><!-- content -->
+                                    <p id="u20070-2">02 | No Holydays (In The Food Chain)</p>
+                                </div>
+                                <!-- /m_editable -->
+                                <!-- m_editable region-id="editable-static-tag-U20068" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                                <div class="clearfix colelem" id="u20068-4" data-muse-uid="U20068"
+                                     data-muse-type="txt_frame"><!-- content -->
+                                    <p id="u20068-2">03 | Watching The Pygmies</p>
+                                </div>
+                                <!-- /m_editable -->
+                                <!-- m_editable region-id="editable-static-tag-U20075" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                                <div class="clearfix colelem" id="u20075-4" data-muse-uid="U20075"
+                                     data-muse-type="txt_frame"><!-- content -->
+                                    <p id="u20075-2">04 | My Friend</p>
+                                </div>
+                                <!-- /m_editable -->
+                                <!-- m_editable region-id="editable-static-tag-U20067" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                                <div class="clearfix colelem" id="u20067-4" data-muse-uid="U20067"
+                                     data-muse-type="txt_frame"><!-- content -->
+                                    <p id="u20067-2">05 | A Delicate Hand</p>
+                                </div>
+                                <!-- /m_editable -->
+                                <!-- m_editable region-id="editable-static-tag-U20074" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                                <div class="clearfix colelem" id="u20074-4" data-muse-uid="U20074"
+                                     data-muse-type="txt_frame"><!-- content -->
+                                    <p id="u20074-2">06 | A Thief In The Game</p>
+                                </div>
+                                <!-- /m_editable -->
+                                <!-- m_editable region-id="editable-static-tag-U20076" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                                <div class="clearfix colelem" id="u20076-4" data-muse-uid="U20076"
+                                     data-muse-type="txt_frame"><!-- content -->
+                                    <p id="u20076-2">07 | Zombie Love</p>
+                                </div>
+                                <!-- /m_editable -->
+                                <!-- m_editable region-id="editable-static-tag-U20071" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                                <div class="clearfix colelem" id="u20071-4" data-muse-uid="U20071"
+                                     data-muse-type="txt_frame"><!-- content -->
+                                    <p id="u20071-2">08 | You Could Be Wrong</p>
+                                </div>
+                                <!-- /m_editable -->
+                                <!-- m_editable region-id="editable-static-tag-U20072" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                                <div class="clearfix colelem" id="u20072-4" data-muse-uid="U20072"
+                                     data-muse-type="txt_frame"><!-- content -->
+                                    <p id="u20072-2">09 | Ghosts Of Sailors</p>
+                                </div>
+                                <!-- /m_editable -->
+                                <!-- m_editable region-id="editable-static-tag-U20069" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                                <div class="clearfix colelem" id="u20069-4" data-muse-uid="U20069"
+                                     data-muse-type="txt_frame"><!-- content -->
+                                    <p id="u20069-2">10 | Cheap Irony</p>
+                                </div>
+                                <!-- /m_editable -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix colelem" id="u20964"><!-- column -->
+                    <!-- m_editable region-id="editable-static-tag-U20958" template="music.html" data-type="image" -->
+                    <div class="clip_frame clearfix colelem" id="u20958" data-muse-uid="U20958"
+                         data-muse-type="img_frame"><!-- image -->
+                        <div id="u20958_clip">
+                            <img class="position_content" id="u20958_img" src="images/photo_2015-07-29_11-51-50.jpg"
+                                 alt="" width="1113" height="538" data-muse-src="images/photo_2015-07-29_11-51-50.jpg"/>
+                        </div>
+                    </div>
+                    <!-- /m_editable -->
+                    <div class="clearfix colelem" id="u20050"><!-- column -->
+                        <!-- m_editable region-id="editable-static-tag-U20052" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                        <div class="clearfix colelem" id="u20052-7" data-muse-uid="U20052" data-muse-type="txt_frame">
+                            <!-- content -->
+                            <p id="u20052-2">[ The Golden Demon ]</p>
+                            <p id="u20052-5"><span id="u20052-3">[ New Songs About Chaos &amp; Transition</span><span
+                                    id="u20052-4"> ]</span></p>
+                        </div>
+                        <!-- /m_editable -->
+                        <!-- m_editable region-id="editable-static-tag-U20051" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                        <div class="clearfix colelem" id="u20051-4" data-muse-uid="U20051" data-muse-type="txt_frame">
+                            <!-- content -->
+                            <p>| 2012 | Album | HEMIFRAN</p>
+                        </div>
+                        <!-- /m_editable -->
+                    </div>
+                    <div class="clearfix colelem" id="u20926"><!-- group -->
+                        <div class="clearfix grpelem" id="u19974"><!-- group -->
+                            <div class="grpelem" id="u19975"><!-- custom html -->
+
+                                <div id="wrapper">
+                                    <audio preload="none" controls>
+                                        <source src="https://s3-us-west-2.amazonaws.com/michaelwardmusic/audio/07_donkey-island.mp3">
+                                        <!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                        <!--<source src="Add File"><!-- Hide -->
+                                    </audio>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- m_editable region-id="editable-static-tag-U19946" template="music.html" data-type="html" data-ice-options="disableImageResize,link" -->
+                        <div class="clearfix grpelem" id="u19946-4" data-muse-uid="U19946" data-muse-type="txt_frame">
+                            <!-- content -->
+                            <p id="u19946-2">07 | Donkey Island</p>
+                        </div>
+                        <!-- /m_editable -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix pinned-colelem" id="u20916"><!-- column -->
+            <div class="position_content" id="u20916_position_content">
+                <div class="pinned-colelem" id="u20923"><!-- simple frame --></div>
+                <a class="nonblock nontext clearfix pinned-colelem" id="u20917-4" href="news.html"
+                   data-href="page:U20849"><!-- content --><p id="u20917-2">NEWS</p></a>
+                <div class="pinned-colelem" id="u20918"><!-- simple frame --></div>
+                <a class="nonblock nontext clearfix pinned-colelem" id="u20921-4" href="the-band.html"
+                   data-href="page:U16128"><!-- content --><p id="u20921-2">THE BAND</p></a>
+                <div class="pinned-colelem" id="u20920"><!-- simple frame --></div>
+                <a class="nonblock nontext MuseLinkActive clearfix pinned-colelem" id="u20922-4" href="music.html"
+                   data-href="page:U16134"><!-- content --><p id="u20922-2"><span id="u20922">MUSIC</span></p></a>
+                <a class="nonblock nontext clearfix pinned-colelem" id="u20925-4" href="videos.html"
+                   data-href="page:U11631"><!-- content --><p id="u20925-2">VIDEOS</p></a>
+                <div class="pinned-colelem" id="u20924"><!-- simple frame --></div>
+                <a class="nonblock nontext clearfix pinned-colelem" id="u20919-4" href="contact.html"
+                   data-href="page:U16146"><!-- content --><p id="u20919-2">CONTACT</p></a>
+            </div>
+        </div>
+        <div class="verticalspacer"></div>
+        <div class="PamphletWidget clearfix colelem" id="pamphletu20235"><!-- none box -->
+            <div class="popup_anchor" id="u20238popup">
+                <div class="ContainerGroup clearfix" id="u20238"><!-- stack box -->
+                    <div class="Container invi clearfix grpelem" id="u20239"><!-- group -->
+                        <div class="clearfix grpelem" id="u20244"><!-- group -->
+                            <div class="clearfix grpelem" id="u20245-5"><!-- content -->
+                                <p><span id="u20245">Design by </span><span id="u20245-2">Christian Testanier</span></p>
+                            </div>
+                            <a class="nonblock nontext grpelem" id="u20246" href="https://www.behance.net/elmetnuter"
+                               target="_blank" title="Behance"><!-- state-based BG images --><img id="u20246_states"
+                                                                                                  alt=""
+                                                                                                  src="images/blank.gif"/></a>
+                        </div>
+                        <div class="clearfix grpelem" id="u20241"><!-- group -->
+                            <div class="clearfix grpelem" id="u20242-5"><!-- content -->
+                                <p><span id="u20242">Photographies by </span><span id="u20242-2">John Vigran</span></p>
+                            </div>
+                            <a class="nonblock nontext grpelem" id="u20243" href="https://vimeo.com/user12995800"
+                               target="_blank" title="Vimeo"><!-- state-based BG images --><img id="u20243_states"
+                                                                                                alt=""
+                                                                                                src="images/blank.gif"/></a>
+                        </div>
+                        <div class="clearfix grpelem" id="u20247-5"><!-- content -->
+                            <p><span id="u20247">Website and Content design with ADOBE CC</span><span id="u20247-2"> || Muse | Photoshop | Illustrator</span>
+                            </p>
+                        </div>
+                        <div class="clearfix grpelem" id="u20240-5"><!-- content -->
+                            <p><span id="u20240">Copyright© </span>MichaelWardMusic || 2015</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ThumbGroup clearfix grpelem" id="u20248"><!-- none box -->
+                <div class="popup_anchor">
+                    <div class="Thumb popup_element rounded-corners clearfix" id="u20249"><!-- group -->
+                        <div class="clearfix grpelem" id="u20250-4"><!-- content -->
+                            <p>+</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup_anchor">
+                <div class="PamphletCloseButton PamphletLightboxPart popup_element rounded-corners clearfix"
+                     id="u20253"><!-- group -->
+                    <div class="clearfix grpelem" id="u20254-4"><!-- content -->
+                        <p>-</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="preload_images">
+    <img class="preload" src="images/u20246_states-r.png" alt=""/>
+    <img class="preload" src="images/u20246_states-r_2x.png" alt=""/>
+    <img class="preload" src="images/u20243_states-r.png" alt=""/>
+    <img class="preload" src="images/u20243_states-r_2x.png" alt=""/>
+</div>
+<!-- JS includes -->
+<script type="text/javascript">
+    if (document.location.protocol != 'https:') document.write('\x3Cscript src="http://musecdn2.businesscatalyst.com/scripts/4.0/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
+</script>
+<script type="text/javascript">
+    window.jQuery || document.write('\x3Cscript src="scripts/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
+</script>
+<script src="scripts/museutils.js?275725342" type="text/javascript"></script>
+<script src="scripts/webpro.js?3883484123" type="text/javascript"></script>
+<script src="scripts/musewpslideshow.js?360574455" type="text/javascript"></script>
+<script src="scripts/jquery.museoverlay.js?342093292" type="text/javascript"></script>
+<script src="scripts/touchswipe.js?4218319045" type="text/javascript"></script>
+<script src="scripts/jquery.watch.js?3999102769" type="text/javascript"></script>
+<!-- Other scripts -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        try {
+            (function () {
+                var a = {}, b = function (a) {
+                    if (a.match(/^rgb/))return a = a.replace(/\s+/g, "").match(/([\d\,]+)/gi)[0].split(","), (parseInt(a[0]) << 16) + (parseInt(a[1]) << 8) + parseInt(a[2]);
+                    if (a.match(/^\#/))return parseInt(a.substr(1), 16);
+                    return 0
+                };
+                (function () {
+                    $('link[type="text/css"]').each(function () {
+                        var b = ($(this).attr("href") || "").match(/\/?css\/([\w\-]+\.css)\?(\d+)/);
+                        b && b[1] && b[2] && (a[b[1]] = b[2])
+                    })
+                })();
+                (function () {
+                    $("body").append('<div class="version" style="display:none; width:1px; height:1px;"></div>');
+                    for (var c = $(".version"), d = 0; d < Muse.assets.required.length;) {
+                        var f = Muse.assets.required[d], g = f.match(/([\w\-\.]+)\.(\w+)$/), k = g && g[1] ? g[1] : null, g = g && g[2] ? g[2] : null;
+                        switch (g.toLowerCase()) {
+                            case "css":
+                                k = k.replace(/\W/gi, "_").replace(/^([^a-z])/gi, "_$1");
+                                c.addClass(k);
+                                var g = b(c.css("color")), h = b(c.css("background-color"));
+                                g != 0 || h != 0 ? (Muse.assets.required.splice(d, 1), "undefined" != typeof a[f] && (g != a[f] >>> 24 || h != (a[f] & 16777215)) && Muse.assets.outOfDate.push(f)) : d++;
+                                c.removeClass(k);
+                                break;
+                            case "js":
+                                k.match(/^jquery-[\d\.]+/gi) &&
+                                typeof $ != "undefined" ? Muse.assets.required.splice(d, 1) : d++;
+                                break;
+                            default:
+                                throw Error("Unsupported file type: " + g);
+                        }
+                    }
+                    c.remove();
+                    if (Muse.assets.outOfDate.length || Muse.assets.required.length)c = "Some files on the server may be missing or incorrect. Clear browser cache and try again. If the problem persists please contact website author.", (d = location && location.search && location.search.match && location.search.match(/muse_debug/gi)) && Muse.assets.outOfDate.length && (c += "\nOut of date: " + Muse.assets.outOfDate.join(",")), d && Muse.assets.required.length && (c += "\nMissing: " + Muse.assets.required.join(",")), alert(c)
+                })()
+            })();
+            /* body */
+            Muse.Utils.transformMarkupToFixBrowserProblemsPreInit();
+            /* body */
+            Muse.Utils.detectScreenResolution();
+            /* HiDPI screens */
+            Muse.Utils.prepHyperlinks(true);
+            /* body */
+            Muse.Utils.initWidget('#pamphletu20235', function (elem) {
+                new WebPro.Widget.ContentSlideShow(elem, {
+                    contentLayout_runtime: 'stack',
+                    event: 'click',
+                    deactivationEvent: 'none',
+                    autoPlay: false,
+                    displayInterval: 3000,
+                    transitionStyle: 'fading',
+                    transitionDuration: 300,
+                    hideAllContentsFirst: true,
+                    shuffle: false,
+                    enableSwipe: true,
+                    resumeAutoplay: true,
+                    resumeAutoplayInterval: 3000,
+                    playOnce: false,
+                    autoActivate_runtime: false
+                });
+            });
+            /* #pamphletu20235 */
+            Muse.Utils.fullPage('#page');
+            /* 100% height page */
+            Muse.Utils.showWidgetsWhenReady();
+            /* body */
+            Muse.Utils.transformMarkupToFixBrowserProblems();
+            /* body */
+        } catch (e) {
+            if (e && 'function' == typeof e.notify) e.notify(); else Muse.Assert.fail('Error calling selector function:' + e);
+        }
+    });
+</script>
+
+<!--HTML Widget code-->
+
+<script>
+    // Probably created with Adobe Muse... :'(
+
+    !function (e, t, a) {
+        var i = "ontouchstart" in t,
+                n = i ? "touchstart" : "mousedown",
+                o = i ? "touchmove" : "mousemove",
+                d = i ? "touchcancel" : "mouseup",
+                u = function (e) {
+                    var t = e / 3600,
+                            a = Math.floor(t),
+                            i = e % 3600 / 60,
+                            n = Math.floor(i),
+                            o = Math.ceil(e % 3600 % 60);
+                    return o > 59 && (o = 0, n = Math.ceil(i)), n > 59 && (n = 0, a = Math.ceil(t)), (0 == a ? "" : a > 0 && a.toString().length < 2 ? "0" + a + ":" : a + ":") + (n.toString().length < 2 ? "0" + n : n) + ":" + (o.toString().length < 2 ? "0" + o : o)
+                },
+                l = function (e) {
+                    var t = a.createElement("audio");
+                    return !(!t.canPlayType || !t.canPlayType("audio/" + e.split(".").pop().toLowerCase() + ";").replace(/no/, ""))
+                };
+        e.fn.audioPlayer = function (t) {
+            var t = e.extend({
+                        classPrefix: "audioplayer",
+                        strPlay: "Play",
+                        strPause: "Pause",
+                        strVolume: "Volume"
+                    }, t),
+                    a = {},
+                    r = {
+                        playPause: "playpause",
+                        playing: "playing",
+                        stopped: "stopped",
+                        time: "time",
+                        timeCurrent: "time-current",
+                        timeDuration: "time-duration",
+                        bar: "bar",
+                        barLoaded: "bar-loaded",
+                        barPlayed: "bar-played",
+                        volume: "volume",
+                        volumeButton: "volume-button",
+                        volumeAdjust: "volume-adjust",
+                        noVolume: "novolume",
+                        muted: "muted",
+                        mini: "mini"
+                    };
+            for (var s in r) a[s] = t.classPrefix + "-" + r[s];
+            return this.each(function () {
+                if ("audio" != e(this).prop("tagName").toLowerCase()) return !1;
+                var r = e(this),
+                        s = r.attr("src"),
+                        v = r.get(0).getAttribute("autoplay"),
+                        v = "" === v || "autoplay" === v ? !0 : !1,
+                        m = r.get(0).getAttribute("loop"),
+                        m = "" === m || "loop" === m ? !0 : !1,
+                        c = !1;
+                "undefined" == typeof s ? r.find("source").each(function () {
+                    return s = e(this).attr("src"), "undefined" != typeof s && l(s) ? (c = !0, !1) : void 0
+                }) : l(s) && (c = !0);
+                var h = e('<div class="' + t.classPrefix + '">' + (c ? e("<div>").append(r.eq(0).clone()).html() : '<embed src="' + s + '" width="0" height="0" volume="100" autostart="' + v.toString() + '" loop="' + m.toString() + '" />') + '<div class="' + a.playPause + '" title="' + t.strPlay + '"><a href="#">' + t.strPlay + "</a></div></div>"),
+                        f = h.find(c ? "audio" : "embed"),
+                        f = f.get(0);
+                if (c) {
+                    h.find("audio").css({
+                        width: 0,
+                        height: 0,
+                        visibility: "hidden"
+                    }), h.append('<div class="' + a.time + " " + a.timeCurrent + '"></div><div class="' + a.bar + '"><div class="' + a.barLoaded + '"></div><div class="' + a.barPlayed + '"></div></div><div class="' + a.time + " " + a.timeDuration + '"></div><div class="' + a.volume + '"><div class="' + a.volumeButton + '" title="' + t.strVolume + '"><a href="#">' + t.strVolume + '</a></div><div class="' + a.volumeAdjust + '"><div><div></div></div></div></div>');
+                    var p = h.find("." + a.bar),
+                            y = h.find("." + a.barPlayed),
+                            g = h.find("." + a.barLoaded),
+                            b = h.find("." + a.timeCurrent),
+                            P = h.find("." + a.timeDuration),
+                            C = h.find("." + a.volumeButton),
+                            E = h.find("." + a.volumeAdjust + " > div"),
+                            w = 0,
+                            M = function (e) {
+                                theRealEvent = i ? e.originalEvent.touches[0] : e, f.currentTime = Math.round(f.duration * (theRealEvent.pageX - p.offset().left) / p.width())
+                            },
+                            L = function (e) {
+                                theRealEvent = i ? e.originalEvent.touches[0] : e, f.volume = Math.abs((theRealEvent.pageY - (E.offset().top + E.height())) / E.height())
+                            },
+                            S = function () {
+                                var e = setInterval(function () {
+                                    return f.buffered.length < 1 ? !0 : (g.width(f.buffered.end(0) / f.duration * 100 + "%"), void(Math.floor(f.buffered.end(0)) >= Math.floor(f.duration) && clearInterval(e)))
+                                }, 100)
+                            },
+                            V = f.volume,
+                            j = f.volume = .111;
+                    Math.round(1e3 * f.volume) / 1e3 == j ? f.volume = V : h.addClass(a.noVolume), P.html("…"), b.html(u(0)), f.addEventListener("loadeddata", function () {
+                        S(), P.html(e.isNumeric(f.duration) ? u(f.duration) : "…"), E.find("div").height(100 * f.volume + "%"), w = f.volume
+                    }), f.addEventListener("timeupdate", function () {
+                        b.html(u(f.currentTime)), y.width(f.currentTime / f.duration * 100 + "%")
+                    }), f.addEventListener("volumechange", function () {
+                        E.find("div").height(100 * f.volume + "%"), f.volume > 0 && h.hasClass(a.muted) && h.removeClass(a.muted), f.volume <= 0 && !h.hasClass(a.muted) && h.addClass(a.muted)
+                    }), f.addEventListener("ended", function () {
+                        h.removeClass(a.playing).addClass(a.stopped)
+                    }), p.on(n, function (e) {
+                        M(e), p.on(o, function (e) {
+                            M(e)
+                        })
+                    }).on(d, function () {
+                        p.unbind(o)
+                    }), C.on("click", function () {
+                        return h.hasClass(a.muted) ? (h.removeClass(a.muted), f.volume = w) : (h.addClass(a.muted), w = f.volume, f.volume = 0), !1
+                    }), E.on(n, function (e) {
+                        L(e), E.on(o, function (e) {
+                            L(e)
+                        })
+                    }).on(d, function () {
+                        E.unbind(o)
+                    })
+                } else h.addClass(a.mini);
+                h.addClass(v ? a.playing : a.stopped), h.find("." + a.playPause).on("click", function () {
+                    return h.hasClass(a.playing) ? (e(this).attr("title", t.strPlay).find("a").html(t.strPlay), h.removeClass(a.playing).addClass(a.stopped), c ? f.pause() : f.Stop()) : (e(this).attr("title", t.strPause).find("a").html(t.strPause), h.addClass(a.playing).removeClass(a.stopped), c ? f.play() : f.Play()), !1
+                }), r.replaceWith(h)
+            }), this
+        }
+    }(jQuery, window, document);
+</script>
+<script>
+    $('audio').audioPlayer(
+            {
+                strPlay: 'Play', // default value: 'Play'
+                strPause: 'Pause', // default value: 'Pause'
+                strVolume: 'Volume', // default value: 'Volume'
+            });
+</script>
+
+
+</body>
+</html>

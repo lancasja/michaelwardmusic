@@ -1,0 +1,432 @@
+#u20641
+{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #FFFFFF;
+	background-color: transparent;
+	border-radius: 100px;
+	position: fixed;
+}
+
+#u20641:hover
+{
+	background-color: #7F7F7F;
+}
+
+#u20642-4
+{
+	background-color: transparent;
+	line-height: 22px;
+	color: #FFFFFF;
+	font-size: 18px;
+	text-align: center;
+	font-family: mate-sc, serif;
+	font-weight: 400;
+	position: fixed;
+}
+
+#u20215
+{
+	background-color: #191919;
+	position: fixed;
+}
+
+#u20217-4
+{
+	background-color: #191919;
+	line-height: 47px;
+	color: #FFFFFF;
+	font-size: 39px;
+	text-align: left;
+	font-family: mate-sc, serif;
+	font-weight: 400;
+	position: fixed;
+}
+
+#u20219
+{
+	background-color: #191919;
+	position: relative;
+}
+
+#u20231
+{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #FFFFFF;
+	background-color: #191919;
+	border-radius: 100px;
+	position: fixed;
+}
+
+#u20231:hover
+{
+	background-color: #3B5998;
+}
+
+#u20229
+{
+	background-color: transparent;
+	border-radius: 100px;
+	overflow: hidden;
+	position: fixed;
+}
+
+#u20223
+{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #FFFFFF;
+	background-color: #191919;
+	border-radius: 100px;
+	position: fixed;
+}
+
+#u20223:hover
+{
+	background-color: #FF7700;
+}
+
+#u20225
+{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #FFFFFF;
+	background-color: #191919;
+	border-radius: 100px;
+	position: fixed;
+}
+
+#u20225:hover
+{
+	background-color: #C4302B;
+}
+
+#u20221,#u20226
+{
+	background-color: transparent;
+	border-radius: 100px;
+	overflow: hidden;
+	position: fixed;
+}
+
+#u20640,#u20214,#u20916
+{
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	position: fixed;
+}
+
+#u20917-4
+{
+	background-color: transparent;
+	line-height: 22px;
+	color: #FFFFFF;
+	font-size: 18px;
+	text-align: left;
+	font-family: mate-sc, serif;
+	font-weight: 400;
+	position: fixed;
+}
+
+#u20917-4:hover
+{
+	background-color: #7F7F7F;
+}
+
+#u20917-2
+{
+	padding-left: 4px;
+	padding-top: 1px;
+}
+
+#u20921-4
+{
+	background-color: transparent;
+	line-height: 22px;
+	color: #FFFFFF;
+	font-size: 18px;
+	text-align: left;
+	font-family: mate-sc, serif;
+	font-weight: 400;
+	position: fixed;
+}
+
+#u20921-4:hover
+{
+	background-color: #7F7F7F;
+}
+
+#u20921-2
+{
+	padding-left: 4px;
+	padding-top: 1px;
+}
+
+#u20922-4
+{
+	background-color: transparent;
+	line-height: 22px;
+	color: #FFFFFF;
+	font-size: 18px;
+	text-align: left;
+	font-family: source-sans-pro, sans-serif;
+	font-weight: 300;
+	position: fixed;
+}
+
+#u20922-4:hover
+{
+	background-color: #7F7F7F;
+}
+
+#u20922-2
+{
+	padding-left: 4px;
+	padding-top: 1px;
+}
+
+#u20922
+{
+	font-family: mate-sc, serif;
+	font-weight: 400;
+}
+
+#u20925-4
+{
+	background-color: transparent;
+	line-height: 22px;
+	color: #FFFFFF;
+	font-size: 18px;
+	text-align: left;
+	font-family: mate-sc, serif;
+	font-weight: 400;
+	position: fixed;
+}
+
+#u20925-4:hover
+{
+	background-color: #7F7F7F;
+}
+
+#u20925-2
+{
+	padding-left: 4px;
+	padding-top: 1px;
+}
+
+#u20923,#u20918,#u20920,#u20924
+{
+	border-style: solid;
+	border-color: #FFFFFF;
+	background-color: transparent;
+	position: fixed;
+	border-width: 1px 0px 0px;
+}
+
+#u20919-4
+{
+	background-color: transparent;
+	line-height: 22px;
+	color: #FFFFFF;
+	font-size: 18px;
+	text-align: left;
+	font-family: mate-sc, serif;
+	font-weight: 400;
+	position: fixed;
+}
+
+#u20919-4:hover
+{
+	background-color: #7F7F7F;
+}
+
+#u20641.MuseLinkActive,#u20917-4.MuseLinkActive,#u20921-4.MuseLinkActive,#u20922-4.MuseLinkActive,#u20925-4.MuseLinkActive,#u20919-4.MuseLinkActive
+{
+	background-color: #7D1A0A;
+}
+
+#u20919-2
+{
+	padding-left: 4px;
+	padding-top: 1px;
+}
+
+#u20238
+{
+	background-color: transparent;
+	position: fixed;
+}
+
+#u20239
+{
+	border-style: none;
+	border-color: transparent;
+	background-color: #191919;
+	position: relative;
+}
+
+#u20246_states
+{
+	vertical-align: top;
+	background: url("../images/u20246_states.png") no-repeat 0px 0px;
+}
+
+#u20246:hover #u20246_states
+{
+	background: url("../images/u20246_states-r.png") no-repeat 0px 0px;
+}
+
+.hidpi #u20246:hover #u20246_states
+{
+	background-image: url("../images/u20246_states_2x.png");
+	background-image: url("../images/u20246_states-r_2x.png");
+	background-size: 40px 40px;
+}
+
+#u20228,#u20220,#u20224,#u20244,#u20241
+{
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	position: relative;
+}
+
+#u20243_states
+{
+	vertical-align: top;
+	background: url("../images/u20243_states.png") no-repeat 0px 0px;
+}
+
+#u20243:hover #u20243_states
+{
+	background: url("../images/u20243_states-r.png") no-repeat 0px 0px;
+}
+
+.hidpi #u20243:hover #u20243_states
+{
+	background-image: url("../images/u20243_states_2x.png");
+	background-image: url("../images/u20243_states-r_2x.png");
+	background-size: 40px 40px;
+}
+
+#u20245-5,#u20242-5,#u20247-5
+{
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	color: #FFFFFF;
+	text-align: left;
+	font-family: source-sans-pro, sans-serif;
+	font-weight: 400;
+	position: relative;
+}
+
+#u20245,#u20242,#u20247
+{
+	font-family: source-sans-pro, sans-serif;
+	font-weight: 700;
+}
+
+#u20245-2,#u20242-2,#u20247-2
+{
+	font-family: source-sans-pro, sans-serif;
+	font-weight: 300;
+}
+
+#u20240-5
+{
+	background-color: transparent;
+	color: #FFFFFF;
+	text-align: left;
+	font-family: source-sans-pro, sans-serif;
+	font-weight: 400;
+	position: relative;
+}
+
+#u20240
+{
+	font-family: source-sans-pro, sans-serif;
+	font-weight: 900;
+}
+
+#pamphletu20235,#u20246,#u20243,#u20248
+{
+	position: relative;
+}
+
+#u20249
+{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #FFFFFF;
+	background-color: transparent;
+	border-radius: 100px;
+	position: fixed;
+}
+
+#u20249:hover
+{
+	background-color: #7F7F7F;
+}
+
+#u20229:hover,#u20249.PamphletThumbSelected
+{
+	background-color: transparent;
+}
+
+#u20250-4
+{
+	background-color: transparent;
+	line-height: 29px;
+	color: #FFFFFF;
+	font-size: 24px;
+	text-align: center;
+	font-family: source-sans-pro, sans-serif;
+	font-weight: 300;
+	position: relative;
+}
+
+#u20249.PamphletThumbSelected #u20250-4 p
+{
+	padding-top: 0px;
+	letter-spacing: 0px;
+	font-size: 24px;
+}
+
+#u20253
+{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #FFFFFF;
+	background-color: #191919;
+	border-radius: 100px;
+	position: fixed;
+}
+
+#u20253:hover
+{
+	background-color: #999999;
+}
+
+#u20253:active
+{
+	background-color: #6B6B6B;
+}
+
+#u20254-4
+{
+	background-color: transparent;
+	line-height: 34px;
+	color: #FFFFFF;
+	font-size: 24px;
+	text-align: center;
+	position: relative;
+}
+
+.PamphletWidget .ThumbGroup .Thumb,.PamphletNextButton,.PamphletPrevButton,.PamphletCloseButton /* pamphlet2 */
+{
+	cursor: pointer;
+}
+
