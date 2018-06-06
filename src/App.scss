@@ -18,6 +18,7 @@ img {
   display: flex;
   position: relative;
   background: #191919;
+  color: white;
   font-family: 'Mate SC', serif;
 
   & > div {
@@ -351,4 +352,19 @@ img {
       text-align: center;
     }
   }
+}
+
+.music-page {
+  max-width: 68rem;
+}
+
+.page-banner {
+  width: 100%;
+  font-size: 18px;
+  color: #7D1A0A;
+  background: white;
+  padding: 0.75rem;
+  text-align: center;
+  font-family: source-sans-pro, sans-serif;
+  margin-bottom: 2rem;
 }

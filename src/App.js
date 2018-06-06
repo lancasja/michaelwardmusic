@@ -5,6 +5,8 @@ import Header from './components/Header';
 import HomePage from './components/HomePage';
 import NewsPage from './components/NewsPage';
 import BandPage from './components/BandPage';
+import MusicPage from './components/MusicPage';
+
 import './App.css';
 
 import logo from './assets/michael-ward-logo.svg';
@@ -54,6 +56,7 @@ class App extends Component {
             <Route exact path="/" component={ HomePage }/>
             <Route exact path="/news" component={ NewsPage }/>
             <Route exact path="/band" component={ BandPage }/>
+            <Route exact path="/music" component={ MusicPage }/>
           </div>
 
         </div>
