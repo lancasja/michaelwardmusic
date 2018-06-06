@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Mate+SC');
+
 @mixin flex-align($direction: row, $align: center, $justify: center) {
   display: flex;
   flex-direction: $direction;
@@ -16,6 +18,7 @@ img {
   display: flex;
   position: relative;
   background: #191919;
+  font-family: 'Mate SC', serif;
 
   & > div {
     height: 100%;
@@ -263,6 +266,89 @@ img {
 
     img {
       max-width: 75%;
+    }
+  }
+}
+
+// Band Page
+.band-page {
+  max-width: 57rem;
+
+  .band-member {
+    display: flex;
+
+    &-info {
+      color: white;
+      flex-grow: 1;
+
+      h3 {
+        font-size: 2.25rem;
+        margin: 0;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #7D1A0A;
+      }
+
+      span, div {
+        font-family: source-sans-pro, sans-serif;
+        font-weight: 300;
+      }
+
+      span {
+        font-size: 18px;
+      }
+      
+      div {
+        font-size: 14px;
+        margin-top: 20px;
+        line-height: 23px;
+      }
+    }
+
+    &-image {
+      border-radius: 50%;
+      background-color: rgba(255, 0, 0, 0.2);
+      border: 1px solid white;
+      overflow: hidden;
+      flex-shrink: 0;
+      margin-right: 1rem;
+
+      img {
+        min-width: 100%;
+      }
+    }
+  }
+
+  .band-members-thumbnails {
+    margin-top: 3.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid white;
+    display: flex;
+    justify-content: space-evenly;
+
+    .band-member-thumbnail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .band-member-image {
+      cursor: pointer;
+      margin-right: 0;
+      opacity: 0.35;
+
+      &.selected {
+        opacity: 1;
+      }
+    }
+
+    .thumbnail-name {
+      color: white;
+      font-family: source-sans-pro, sans-serif;
+      display: block;
+      margin-top: 1rem;
+      font-size: 14px;
+      text-align: center;
     }
   }
 }

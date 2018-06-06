@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import Header from './components/Header';
 import HomePage from './components/HomePage';
 import NewsPage from './components/NewsPage';
+import BandPage from './components/BandPage';
 import './App.css';
 
 import logo from './assets/michael-ward-logo.svg';
@@ -26,7 +27,7 @@ class App extends Component {
               },
               {
                 label: 'The Band',
-                to: '/the-band'
+                to: '/band'
               },
               {
                 label: 'Music',
@@ -52,6 +53,7 @@ class App extends Component {
 
             <Route exact path="/" component={ HomePage }/>
             <Route exact path="/news" component={ NewsPage }/>
+            <Route exact path="/band" component={ BandPage }/>
           </div>
 
         </div>
