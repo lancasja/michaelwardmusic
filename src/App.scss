@@ -365,12 +365,51 @@ img {
   }
 }
 
+// Music Page
 .music-page {
   max-width: 68rem;
+  
+  .album-title {
+    font-size: 1.875rem;
+  }
+
+  .album-track,
+  .transport-bar {
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  }
+
+  .album-track {
+
+    &:first-child {
+      margin-top: 1rem;
+    }
+
+    &-number {
+      border-right: 1px solid white;
+      padding-right: 0.5rem;
+    }
+
+    &-title {
+      margin-left: 0.5rem;
+    }
+
+    audio {
+      margin-right: 1rem;
+      filter: invert(96%);
+    }
+
+    .album-track-number,
+    .album-track-title {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+  }
 }
 
 .page-banner {
-  width: 100%;
   font-size: 18px;
   color: #7D1A0A;
   background: white;

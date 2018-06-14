@@ -1,4 +1,5 @@
 import React from 'react';
+import Album from '../components/Album/Album';
 
 import albumWeekendsOnTheDarkWineSea from '../assets/album-weekends-on-the-dark-wine-sea.jpg';
 // import albumAWalkInThePark from '../assets/album-a-walk-in-the-park.jpg';
@@ -87,45 +88,6 @@ const albums = [
     }
 ];
 
-class Transport extends React.Component {
-    render () {
-        return (
-            <div>This will be a transport bar...</div>
-        );
-    }
-}
-
-const AlbumTrack = ({ title, index, audioUrl }) => (
-    <div className="album-track">
-        <Transport audio={ audioUrl }/>
-        <span className="album-track-index">{ index }</span>
-        <span className="album-track-number">{ title }</span>
-    </div>
-);
-
-const Album = ({ title, image, year, type, note, tracks }) => (
-    <div className="album">
-        <div className="album-image">
-            <img src={ image } alt={ title }/>
-        </div>
-        <div className="album-info">
-            { `${year} | ${type} | ${note}` }
-        </div>
-        <div className="album-tracks">
-        {
-            tracks.map((track, index) => {
-                return (
-                    <AlbumTrack
-                        title={ track.title }
-                        index={ track.index }
-                        audioUrl={ track.audioUrl }/>
-                );
-            })
-        }    
-        </div>
-    </div>
-);
-
 class MusicPage extends React.Component {
     render() {
         return (
@@ -135,7 +97,7 @@ class MusicPage extends React.Component {
                 {
                     albums.map((album, index) => {
                         return (
-                            <Album { ...album }/>
+                            <Album key={ `album-${index}` }{ ...album }/>
                         );
                     })
                 }
