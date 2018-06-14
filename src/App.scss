@@ -41,6 +41,7 @@ img {
   }
 
   .nav-bar--item {
+    position: relative;
     border-top: 1px solid #fff;
     cursor: pointer;
     @include flex-align($align: center, $justify: flex-start);
@@ -52,27 +53,37 @@ img {
       font-size: 1.125rem;
       text-transform: uppercase;
       display: block;
-      margin: 10px 0;
-      padding: 0 5px;
+      padding: 10px 5px;
+      width: 100%;
+      height: 100%;
 
       &:hover {
         background: #7F7F7F;
       }
     }
 
+    // Home Button
     &:first-child {
-      width: 98px;
-      height: 98px;
-      border: 1px solid #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
+      border-top: none;
       margin-bottom: 25px;
+
+      a {
+        width: 98px;
+        height: 98px;
+        border: 1px solid #fff;
+        display: flex;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        padding: 0; 
+      }
+
+      &.active a {
+        background: #7D1A0A;
+      }
     }
 
-    &.active {
+    &:not(:first-child).active {
       background: #7D1A0A;
 
       & a:hover {
