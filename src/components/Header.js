@@ -17,19 +17,22 @@ const Header = ({ logo, subtitle }) => (
           name: 'facebook',
           icon: facebookIcon,
           width: 16,
-          height: 30
+          height: 30,
+          url: 'https://www.facebook.com/michaelwardwithdogsandfishes/'
         },
         {
           name: 'soundcloud',
           icon: soundcloudIcon,
           width: 36,
-          height: 21
+          height: 21,
+          url: 'https://soundcloud.com/michaelwardmusic'
         },
         {
           name: 'youtube',
           icon: youtubeIcon,
           width: 30,
-          height: 23
+          height: 23,
+          url: 'https://www.youtube.com/channel/UCH5NEEMhgNXfi4X8aGQmdIQ'
         }
       ]}/>
     </div>

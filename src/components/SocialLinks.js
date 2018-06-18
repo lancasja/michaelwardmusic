@@ -11,7 +11,7 @@ class SocialLinks extends React.Component {
                     items.map((item, index) => {
                         return (
                             <li className={ `social-item social-item--${ item.name }` } key={ index }>
-                                <a>
+                                <a href={ item.url } target="_blank">
                                     <img src={ item.icon } width={ item.width } height={ item.height }  alt="Social Media Logo"/>
                                 </a>
                             </li>
