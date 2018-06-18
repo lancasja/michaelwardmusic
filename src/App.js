@@ -6,6 +6,8 @@ import HomePage from './components/HomePage';
 import NewsPage from './components/NewsPage';
 import BandPage from './components/BandPage';
 import MusicPage from './components/MusicPage';
+import VideosPage from './components/VideosPage';
+import ContactPage from './components/ContactPage';
 
 import './App.css';
 
@@ -57,6 +59,8 @@ class App extends Component {
             <Route exact path="/news" component={ NewsPage }/>
             <Route exact path="/band" component={ BandPage }/>
             <Route exact path="/music" component={ MusicPage }/>
+            <Route exact path="/videos" component={ VideosPage }/>
+            <Route exact path="/contact" component={ ContactPage }/>
           </div>
 
         </div>
