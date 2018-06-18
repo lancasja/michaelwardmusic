@@ -3,7 +3,6 @@ import React from 'react';
 const AlbumTrack = ({ title, index, audioUrl }) => (
     <div className="album-track">
         <audio
-            id={ title.replace(' ', '') }
             controls
             controlsList="nodownload"
             src={ audioUrl }>
