@@ -19,7 +19,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           {/* Left - Rail */}
-          <div>
+          <div className="left-rail">
             <NavBar items={[
               {
                 label: 'Home',
