@@ -8,6 +8,8 @@
 }
 
 html {
+  padding: 0 8px;
+
   @media (min-width: 1160px) {
     font-size: 16px;
   }
@@ -385,7 +387,7 @@ img {
   max-width: 68rem;
   
   .album {
-    margin-bottom: 185px;
+    margin-bottom: 11.5rem;
   }
 
   .album-title {
@@ -405,13 +407,17 @@ img {
       margin-top: 1rem;
     }
 
-    &-number {
-      border-right: 1px solid white;
-      padding-right: 0.5rem;
-    }
+    .album-track-info {
+      display: flex;
 
-    &-title {
-      margin-left: 0.5rem;
+      .album-track-number {
+        border-right: 1px solid white;
+        padding-right: 0.5rem;
+      }
+  
+      .album-track-title {
+        margin-left: 0.5rem;
+      }
     }
 
     audio {
@@ -542,6 +548,57 @@ img {
       .social-item {
         transform: scale(0.75);
         margin-left: 0;
+      }
+    }
+
+    .band-page {
+      .band-member {
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .band-member-image {
+        width: 185px !important;
+        height: 185px !important;
+        margin: 0 auto 2rem auto;
+      }
+
+      .band-members-thumbnails {
+        flex-wrap: wrap;
+
+        .band-member-thumbnail {
+          margin-bottom: 2rem;
+        }
+
+        .band-member-image {
+          width: 75px !important;
+          height: 75px !important;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  .music-page {
+    .album {
+      margin-bottom: 8rem;
+    }
+
+    .album-track {
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+      &:first-child {
+        margin-top: 1rem;
+      }
+
+      .album-track-info {
+        display: flex;
+        flex: 0 0 100%;
+        order: -1;
       }
     }
   }

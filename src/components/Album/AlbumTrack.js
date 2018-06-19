@@ -8,8 +8,10 @@ const AlbumTrack = ({ title, index, audioUrl }) => (
             src={ audioUrl }>
             Your browser does not support the audio element.
         </audio>
-        <span className="album-track-number">{ index }</span>
-        <span className="album-track-title">{ title }</span>
+        <div className="album-track-info">
+            <span className="album-track-number">{ index }</span>
+            <span className="album-track-title">{ title }</span>
+        </div>
     </div>
 );
 
