@@ -1,6 +1,6 @@
 import React from 'react';
 
-import homeImage from '../assets/michael-ward-home.jpg';
+import homeImage from '../assets/michael-ward-promo-photo.jpg';
 
 class HomePage extends React.Component {
   render() {
@@ -10,7 +10,11 @@ class HomePage extends React.Component {
         <div
           style={{
               border: '1px solid #fff',
-              overflow: 'hidden'
+              overflow: 'hidden',
+              // backgroundImage: `url('${homeImage}')`,
+              // backgroundSize: 'cover',
+              // backgroundPosition: 'center',
+              // backgroundRepeat: 'no-repeat'
             }}>
           <img src={ homeImage } alt="Artistic shot of the band"/>
         </div>
