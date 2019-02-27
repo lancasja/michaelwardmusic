@@ -4,6 +4,26 @@ import penaCenterPoster from '../assets/pena-center-poster.jpg';
 
 const EVENTS = [
   {
+    title: 'Monthly residency at the Riptide',
+    date: {
+      day: '3rd',
+      month: 'Sun'
+    },
+    time: 'Third Sundays 7:30-10:30',
+    mapLink: 'https://goo.gl/maps/95gWg1kpx5y',
+    address: {
+      street: '3693 Taraval St.',
+      city: 'San Francisco, CA',
+      phone: '(415)681-8433',
+      website: ''
+    },
+    notes: [
+      {
+        title: 'Monthly residency starting July 15 - No Cover'
+      }
+    ]
+  },
+  {
     title: 'Peña Pachamama Center',
     date: {
       day: '17',

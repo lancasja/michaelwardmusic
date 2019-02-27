@@ -5,6 +5,7 @@ import Header from './components/Header';
 import HomePage from './components/HomePage';
 import NewsPage from './components/NewsPage';
 import BandPage from './components/BandPage';
+import PhotosPage from './components/PhotosPage';
 import MusicPage from './components/MusicPage';
 import VideosPage from './components/VideosPage';
 import ContactPage from './components/ContactPage';
@@ -38,6 +39,10 @@ class App extends Component {
                 to: '/music'
               },
               {
+                label: 'Photos',
+                to: '/photos'
+              },
+              {
                 label: 'Videos',
                 to: '/videos'
               },
@@ -59,6 +64,7 @@ class App extends Component {
             <Route exact path="/news" component={ NewsPage }/>
             <Route exact path="/band" component={ BandPage }/>
             <Route exact path="/music" component={ MusicPage }/>
+            <Route exact path="/photos" component={ PhotosPage }/>
             <Route exact path="/videos" component={ VideosPage }/>
             <Route exact path="/contact" component={ ContactPage }/>
           </div>

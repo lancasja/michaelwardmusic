@@ -20,6 +20,11 @@ const videos = [
         src: 'https://www.youtube.com/embed/gic4uHPbdDo',
         title: 'Buy Something',
         subtitle: 'A Walk in The Park'
+    },
+    {
+        src: 'https://www.youtube.com/embed/clTDLRgSFTg',
+        title: 'Mendacity',
+        subtitle: '(Official Video)'
     }
 ];
 
@@ -32,7 +37,7 @@ class VideosPage extends React.Component {
                         videos.map((video, index) => {
                             return (
                                 <div className="video" key={ `video-${index}` }>
-                                    <div class="video-iframe">
+                                    <div className="video-iframe">
                                         <iframe title={ video.title } src={ video.src }></iframe>
                                     </div>
                                     <div className="video-info">
