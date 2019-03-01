@@ -1,32 +1,185 @@
 import React from 'react';
+import { photos, shuffle } from '../utils';
 import Gallery from 'react-photo-gallery';
 
-function importAll(r) {
-    return r.keys().map(r);
+const imageSizes = {
+    'P9380926': {
+        w: 1440,
+        h: 2160
+    },
+    'P9380938': {
+        w: 1440,
+        h: 960
+    },
+    'P9380948': {
+        w: 1440,
+        h: 2160
+    },
+    'P9380955': {
+        w: 1440,
+        h: 960
+    },
+    'P9380961': {
+        w: 1440,
+        h: 960
+    },
+    'P9380967': {
+        w: 1440,
+        h: 1897
+    },
+    'P9380974': {
+        w: 1440,
+        h: 2160
+    },
+    'P9380979': {
+        w: 1440,
+        h: 2160
+    },
+    'P9380984': {
+        w: 1440,
+        h: 2160
+    },
+    'P9380993': {
+        w: 1440,
+        h: 2160
+    },
+    'P9390010': {
+        w: 1440,
+        h: 2160
+    },
+    'P9390014': {
+        w: 1440,
+        h: 2160
+    },
+    'P9390020': {
+        w: 1440,
+        h: 960
+    },
+    'P9390021': {
+        w: 1440,
+        h: 2160
+    },
+    'P9390025': {
+        w: 1440,
+        h: 1533
+    },
+    'P9390028': {
+        w: 1440,
+        h: 2160
+    },
+    'P9390037': {
+        w: 1440,
+        h: 960
+    },
+    'P9390040': {
+        w: 1440,
+        h: 810
+    },
+    'P9390052': {
+        w: 1440,
+        h: 1471
+    },
+    'P9390053': {
+        w: 1440,
+        h: 1900
+    },
+    'P9390057': {
+        w: 1440,
+        h: 2160
+    },
+    'P9390069': {
+        w: 1440,
+        h: 960
+    },
+    'P9390078': {
+        w: 1440,
+        h: 1420
+    },
+    'P9390090': {
+        w: 1440,
+        h: 975
+    },
+    'P9390098': {
+        w: 1440,
+        h: 960
+    },
+    'P9390101': {
+        w: 1440,
+        h: 1137
+    },
+    'P9390116': {
+        w: 1440,
+        h: 960
+    },
+    'P9390120': {
+        w: 1440,
+        h: 960
+    },
+    'P9390132': {
+        w: 1440,
+        h: 960
+    },
+    'P9390140': {
+        w: 1440,
+        h: 960
+    },
+    'P9390152': {
+        w: 1440,
+        h: 2160
+    },
+    'P9390154': {
+        w: 1440,
+        h: 1671
+    },
+    'P9390166': {
+        w: 1440,
+        h: 960
+    },
+    'P9390168': {
+        w: 1440,
+        h: 1030
+    },
+    'P9390173': {
+        w: 1440,
+        h: 1682
+    },
+    'P9390183': {
+        w: 1440,
+        h: 960
+    },
+    'P9390193': {
+        w: 1440,
+        h: 2160
+    },
+    'P9390220': {
+        w: 1440,
+        h: 1846
+    },
+    'P9390222': {
+        w: 1440,
+        h: 1313
+    },
+    
 }
-  
-const importedImages = importAll(require.context('../assets/photos/independent/', false, /\.(jpe?g)$/));
 
-class PhotosPage extends React.Component {
-    componentDidMount () {
-        const images = importedImages.forEach(image => {
-            const img = new Image();
-            img.src = image;
+const imagesObj = () => {
+    return shuffle(photos().map(image => {
+        const img = image.match(/[A-Z][0-9]+/g);
         
-            const w = img.width;
+        return {
+            src: image,
+            width: imageSizes[img].w,
+            height: imageSizes[img].h
+        }
+    }))
+};
 
-            console.log(w);
-        
-            return null;
-        })
-    }
-
-    render() {
-        return (
-            <div id="photosPage" className="photos-page">
-            </div>
-        );
-    } 
+const PhotosPage = () => {
+    return (
+        <div id="photosPage" className="photos-page">
+            <Gallery photos={ imagesObj() } />
+        </div>
+    );
 }
 
 export default PhotosPage;
